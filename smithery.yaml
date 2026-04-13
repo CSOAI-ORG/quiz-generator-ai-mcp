@@ -1,0 +1,10 @@
+name: quiz-generator-ai-mcp
+description: "MEOK AI Labs — quiz-generator-ai-mcp — Generate quizzes from any topic or text."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/quiz-generator-ai-mcp
+license: MIT
+categories: [Education, Assessment]
+tags: [quiz-generation, assessment, trivia, question-bank, educational-quiz]
+runtime: python
+entrypoint: server.py
