@@ -1,27 +1,35 @@
 #!/usr/bin/env python3
-"""quiz-generator-ai-mcp — Generate quizzes from any topic or text."""
-import asyncio, json
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
-from mcp.server.models import InitializationOptions
-from mcp.types import Tool, TextContent
-import mcp.types as types
+"""Generate quizzes from text content. — MEOK AI Labs."""
+import json, os, re, hashlib, uuid as _uuid, random
+from datetime import datetime, timezone
+from collections import defaultdict
+from mcp.server.fastmcp import FastMCP
 
-server = Server("quiz-generator-ai-mcp")
+FREE_DAILY_LIMIT = 30
+_usage = defaultdict(list)
+def _rl(c="anon"):
+    now = datetime.now(timezone.utc)
+    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
+    if len(_usage[c]) >= FREE_DAILY_LIMIT: return json.dumps({"error": "Limit/day"})
+    _usage[c].append(now); return None
 
-@server.list_tools()
-async def list_tools():
-    return [Tool(name="run", description="Generate quizzes from any topic or text.", inputSchema={"type":"object","properties":{"input":{"type":"string"}},"required":["input"]})]
+mcp = FastMCP("quiz-generator", instructions="MEOK AI Labs — Generate quizzes from text content.")
 
-@server.call_tool()
-async def call_tool(name, arguments=None):
-    inp = (arguments or {}).get("input", "")
-    result = {"output": f"Processed: {inp}"}
-    return [TextContent(type="text", text=json.dumps(result, indent=2))]
 
-async def main():
-    async with stdio_server(server._read_stream, server._write_stream) as (rs, ws):
-        await server.run(rs, ws, InitializationOptions(server_name="quiz-generator-ai-mcp", server_version="0.1.0", capabilities=server.get_capabilities()))
+@mcp.tool()
+def generate_quiz(text: str, num_questions: int = 5) -> str:
+    """Generate quiz questions from text content."""
+    if err := _rl(): return err
+    sentences = [s.strip() for s in re.split(r'[.!?]', text) if len(s.strip()) > 20]
+    questions = []
+    for s in sentences[:num_questions]:
+        words = s.split()
+        if len(words) > 5:
+            blank_idx = random.randint(2, len(words)-2)
+            answer = words[blank_idx]
+            words[blank_idx] = "____"
+            questions.append({"question": " ".join(words), "answer": answer, "type": "fill_blank"})
+    return json.dumps({"questions": questions, "total": len(questions)}, indent=2)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    mcp.run()
