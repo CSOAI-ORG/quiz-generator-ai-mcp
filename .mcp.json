@@ -1,20 +1,44 @@
 {
   "name": "quiz-generator-ai-mcp",
-  "description": "MEOK AI Labs \u2014 quiz-generator-ai-mcp \u2014 Generate quizzes from any topic or text.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/quiz-generator-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "quiz-generator-ai-mcp \u2014 Generate quizzes from any topic or text.",
+  "version": "1.0.0",
   "tools": [
-    "run"
-  ],
-  "categories": [
-    "Education",
-    "Assessment"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "generate_quiz",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "num_questions": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      }
+    },
+    {
+      "name": "score_quiz",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "answers": {
+            "type": "array"
+          },
+          "correct_answers": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "answers",
+          "correct_answers"
+        ]
+      }
+    }
+  ]
 }
