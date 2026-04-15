@@ -1,42 +1,81 @@
 {
   "name": "quiz-generator-ai-mcp",
-  "description": "quiz-generator-ai-mcp \u2014 Generate quizzes from any topic or text.",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Quiz generation and assessment by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
       "name": "generate_quiz",
-      "description": "",
+      "description": "Generate a quiz from provided content text.",
       "parameters": {
         "type": "object",
         "properties": {
-          "topic": {
+          "content": {
             "type": "string"
           },
           "num_questions": {
             "type": "integer"
+          },
+          "question_type": {
+            "type": "string"
           }
         },
         "required": [
-          "topic"
+          "content"
         ]
       }
     },
     {
-      "name": "score_quiz",
-      "description": "",
+      "name": "validate_answers",
+      "description": "Validate submitted answers against correct answers and return scoring.",
       "parameters": {
         "type": "object",
         "properties": {
-          "answers": {
+          "questions": {
             "type": "array"
           },
-          "correct_answers": {
-            "type": "array"
+          "answers": {
+            "type": "object"
           }
         },
         "required": [
-          "answers",
-          "correct_answers"
+          "questions",
+          "answers"
+        ]
+      }
+    },
+    {
+      "name": "generate_flashcards",
+      "description": "Generate flashcards (front/back pairs) from content for study purposes.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "num_cards": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "assess_difficulty",
+      "description": "Assess the difficulty level of content for quiz/study purposes.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "target_audience": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
         ]
       }
     }

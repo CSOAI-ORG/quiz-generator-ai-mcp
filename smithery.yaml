@@ -1,22 +1,43 @@
 name: quiz-generator-ai-mcp
-description: "quiz-generator-ai-mcp \u2014 Generate quizzes from any topic or text."
+description: Quiz generation and assessment by MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: generate_quiz
-  description: ''
+  description: Generate a quiz from provided content text.
   parameters:
-  - name: topic
+  - name: content
     type: string
     required: true
   - name: num_questions
     type: integer
     required: false
-- name: score_quiz
-  description: ''
+  - name: question_type
+    type: string
+    required: false
+- name: validate_answers
+  description: Validate submitted answers against correct answers and return scoring.
   parameters:
+  - name: questions
+    type: array
+    required: true
   - name: answers
-    type: array
+    type: object
     required: true
-  - name: correct_answers
-    type: array
+- name: generate_flashcards
+  description: Generate flashcards (front/back pairs) from content for study purposes.
+  parameters:
+  - name: content
+    type: string
     required: true
+  - name: num_cards
+    type: integer
+    required: false
+- name: assess_difficulty
+  description: Assess the difficulty level of content for quiz/study purposes.
+  parameters:
+  - name: content
+    type: string
+    required: true
+  - name: target_audience
+    type: string
+    required: false
