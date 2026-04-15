@@ -1,6 +1,6 @@
 {
   "name": "quiz-generator-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Quiz generation and assessment by MEOK AI Labs.",
+  "description": "AI-powered quiz generator ai MCP server for agents. Supports generate quiz, validate answers, generate flashcards. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
