@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/quiz-generator-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+quiz_generator_ai_mcp = "server:main"
