@@ -65,11 +65,11 @@ _QUESTION_TEMPLATES = [
 ]
 
 
-mcp = FastMCP("quiz-generator-ai-mcp", instructions="Quiz generation and assessment by MEOK AI Labs.")
+mcp = FastMCP("quiz-generator-ai", instructions="Quiz generation and assessment by MEOK AI Labs.")
 
 
-@mcp.tool(name="generate_quiz")
-async def generate_quiz(content: str, num_questions: int = 5, question_type: str = "multiple_choice", api_key: str = "") -> dict:
+@mcp.tool()
+def generate_quiz(content: str, num_questions: int = 5, question_type: str = "multiple_choice", api_key: str = "") -> dict:
     """Generate a quiz from provided content text."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -137,8 +137,8 @@ async def generate_quiz(content: str, num_questions: int = 5, question_type: str
     }
 
 
-@mcp.tool(name="validate_answers")
-async def validate_answers(questions: list, answers: dict, api_key: str = "") -> dict:
+@mcp.tool()
+def validate_answers(questions: list, answers: dict, api_key: str = "") -> dict:
     """Validate submitted answers against correct answers and return scoring."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -201,8 +201,8 @@ async def validate_answers(questions: list, answers: dict, api_key: str = "") ->
     }
 
 
-@mcp.tool(name="generate_flashcards")
-async def generate_flashcards(content: str, num_cards: int = 10, api_key: str = "") -> dict:
+@mcp.tool()
+def generate_flashcards(content: str, num_cards: int = 10, api_key: str = "") -> dict:
     """Generate flashcards (front/back pairs) from content for study purposes."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -242,8 +242,8 @@ async def generate_flashcards(content: str, num_cards: int = 10, api_key: str = 
     }
 
 
-@mcp.tool(name="assess_difficulty")
-async def assess_difficulty(content: str, target_audience: str = "general", api_key: str = "") -> dict:
+@mcp.tool()
+def assess_difficulty(content: str, target_audience: str = "general", api_key: str = "") -> dict:
     """Assess the difficulty level of content for quiz/study purposes."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
