@@ -1,67 +1,38 @@
-# Quiz Generator Ai
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Quiz generation and assessment by MEOK AI Labs.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/quiz-generator-ai-mcp)](https://github.com/CSOAI-ORG/quiz-generator-ai-mcp/stargazers)
 
-Quiz generation, validation, and flashcard creation — MEOK AI Labs.
+# uquizU generatorU aiU mcp
+
+**Quiz generation, validation, and flashcard creation — MEOK AI Labs.**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/quiz-generator-ai-mcp)](https://www.npmjs.com/package/@meok-ai/quiz-generator-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/quiz-generator-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install quiz-generator-ai-mcp
+# or
+npm install -g @meok-ai/quiz-generator-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install quiz-generator-ai-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `generate_quiz`
-Generate a quiz from provided content text.
-
-**Parameters:**
-- `content` (str)
-- `num_questions` (int)
-- `question_type` (str)
-
-### `validate_answers`
-Validate submitted answers against correct answers and return scoring.
-
-**Parameters:**
-- `questions` (str)
-- `answers` (str)
-
-### `generate_flashcards`
-Generate flashcards (front/back pairs) from content for study purposes.
-
-**Parameters:**
-- `content` (str)
-- `num_cards` (int)
-
-### `assess_difficulty`
-Assess the difficulty level of content for quiz/study purposes.
-
-**Parameters:**
-- `content` (str)
-- `target_audience` (str)
-
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
-
-## Links
-
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/quiz-generator-ai-mcp](https://github.com/CSOAI-ORG/quiz-generator-ai-mcp)
-- **PyPI**: [pypi.org/project/quiz-generator-ai-mcp](https://pypi.org/project/quiz-generator-ai-mcp/)
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
