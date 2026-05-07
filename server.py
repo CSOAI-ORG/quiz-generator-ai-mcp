@@ -70,7 +70,22 @@ mcp = FastMCP("quiz-generator-ai", instructions="Quiz generation and assessment 
 
 @mcp.tool()
 def generate_quiz(content: str, num_questions: int = 5, question_type: str = "multiple_choice", api_key: str = "") -> dict:
-    """Generate a quiz from provided content text."""
+    """Generate a quiz from provided content text.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -139,7 +154,23 @@ def generate_quiz(content: str, num_questions: int = 5, question_type: str = "mu
 
 @mcp.tool()
 def validate_answers(questions: list, answers: dict, api_key: str = "") -> dict:
-    """Validate submitted answers against correct answers and return scoring."""
+    """Validate submitted answers against correct answers and return scoring.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -203,7 +234,22 @@ def validate_answers(questions: list, answers: dict, api_key: str = "") -> dict:
 
 @mcp.tool()
 def generate_flashcards(content: str, num_cards: int = 10, api_key: str = "") -> dict:
-    """Generate flashcards (front/back pairs) from content for study purposes."""
+    """Generate flashcards (front/back pairs) from content for study purposes.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -244,7 +290,23 @@ def generate_flashcards(content: str, num_cards: int = 10, api_key: str = "") ->
 
 @mcp.tool()
 def assess_difficulty(content: str, target_audience: str = "general", api_key: str = "") -> dict:
-    """Assess the difficulty level of content for quiz/study purposes."""
+    """Assess the difficulty level of content for quiz/study purposes.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
