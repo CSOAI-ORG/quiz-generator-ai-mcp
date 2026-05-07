@@ -85,6 +85,13 @@ def generate_quiz(content: str, num_questions: int = 5, question_type: str = "mu
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        content (str): The content to analyze or process.
+        num_questions (int): The num questions to analyze or process.
+        question_type (str): The question type to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -184,6 +191,12 @@ def validate_answers(questions: list, answers: dict, api_key: str = "") -> dict:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        questions (list): The questions to analyze or process.
+        answers (dict): The answers to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -277,6 +290,12 @@ def generate_flashcards(content: str, num_cards: int = 10, api_key: str = "") ->
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        content (str): The content to analyze or process.
+        num_cards (int): The num cards to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -348,6 +367,12 @@ def assess_difficulty(content: str, target_audience: str = "general", api_key: s
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        content (str): The content to analyze or process.
+        target_audience (str): The target audience to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
