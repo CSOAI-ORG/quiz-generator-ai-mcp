@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "quiz-generator-ai-mcp",
+    "description": "Quiz Generator Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "quiz-generator-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "generate_quiz",
+      "validate_answers",
+      "generate_flashcards",
+      "assess_difficulty"
+    ]
+  }
+}
