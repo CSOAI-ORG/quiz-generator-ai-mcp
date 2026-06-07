@@ -1,3 +1,4 @@
+<!-- mcp-name: CSOAI-ORG/quiz-generator-ai-mcp -->
 # Quiz Generator Ai MCP
 
 [![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
