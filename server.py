@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Quiz generation, validation, and flashcard creation — MEOK AI Labs."""
+"""
+Quiz generation, validation, and flashcard creation — MEOK AI Labs."""
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json
@@ -109,7 +109,7 @@ def generate_quiz(content: str, num_questions: int = 5, question_type: str = "mu
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(api_key or "anon"):
         return err
 
@@ -214,7 +214,7 @@ def validate_answers(questions: list, answers: dict, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(api_key or "anon"):
         return err
 
@@ -313,7 +313,7 @@ def generate_flashcards(content: str, num_cards: int = 10, api_key: str = "") ->
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(api_key or "anon"):
         return err
 
@@ -390,7 +390,7 @@ def assess_difficulty(content: str, target_audience: str = "general", api_key: s
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(api_key or "anon"):
         return err
 
@@ -450,5 +450,8 @@ def assess_difficulty(content: str, target_audience: str = "general", api_key: s
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

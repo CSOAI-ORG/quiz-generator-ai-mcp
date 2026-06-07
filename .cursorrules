@@ -1,0 +1,9 @@
+# quiz-generator-ai-mcp - Auto-trigger Rules
+
+When the user asks about quiz generator, use quiz-generator-ai-mcp tools: generate_quiz, validate_answers, generate_flashcards, assess_difficulty
+
+**MCP server for quiz generator ai mcp operations**
+
+Install: `pip install quiz-generator-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

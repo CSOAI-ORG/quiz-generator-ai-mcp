@@ -1,0 +1,25 @@
+{
+  "name": "quiz-generator-ai-mcp",
+  "title": "Quiz Generator Ai Mcp",
+  "description": "AI-powered quiz generator ai MCP server for agents. Supports generate quiz, validate answers, generate flashcards. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "generate_quiz"
+    },
+    {
+      "name": "validate_answers"
+    },
+    {
+      "name": "generate_flashcards"
+    },
+    {
+      "name": "assess_difficulty"
+    }
+  ]
+}

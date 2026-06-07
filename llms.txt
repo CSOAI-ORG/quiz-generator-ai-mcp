@@ -1,0 +1,33 @@
+# quiz-generator-ai-mcp
+# **MCP server for quiz generator ai mcp operations**
+
+## Install
+```bash
+pip install quiz-generator-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `generate_quiz`
+Generate a quiz from provided content text.
+
+### `validate_answers`
+Validate submitted answers against correct answers and return scoring.
+
+### `generate_flashcards`
+Generate flashcards (front/back pairs) from content for study purposes.
+
+### `assess_difficulty`
+Assess the difficulty level of content for quiz/study purposes.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
