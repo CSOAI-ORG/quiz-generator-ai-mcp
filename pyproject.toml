@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 name = "quiz-generator-ai-mcp"
 version = "1.0.7"
 readme = "README.md"
-description = "AI-powered quiz generator ai MCP server for agents. Supports generate quiz, validate answers, generate flashcards. By MEOK AI Labs."
+description = "Quiz Generator Ai Mcp: generate quiz (Generate a quiz from provided content text.); validate answers (Validate submitted answers against correct answers and retur); generate flashcards (Generate flashcards (front/back pairs) from content for stud); assess difficulty (Assess the difficulty level of content for quiz/study purpos). pip install quiz-generator-ai-mcp."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
